@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import HomeScreen from "./HomeScreen/HomeScreen";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [planets, setPlanets] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/planets")
+      .then((resp) => resp.json())
+      .then((resp) => setPlanets(resp));
+  }, []);
+
+  return <HomeScreen planets={planets} />;
 }
 
 export default App;
