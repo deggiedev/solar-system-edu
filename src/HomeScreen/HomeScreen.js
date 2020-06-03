@@ -16,7 +16,7 @@ const HomeScreen = () => {
             mt={1}
             mr={1}
             height={102}
-            bgcolor="green"
+            bgcolor="white"
             width={150}
           >
             <Box position="relative" display="inline-flex">
