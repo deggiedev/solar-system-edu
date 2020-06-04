@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 const ProgressBar = () => {
   return (
     <>
-      <CircularProgress color="secondary" variant="static" value={75} />
+      <CircularProgress size={48} color="secondary" variant="static" value={75} />
       <Box
         top={0}
         left={0}
@@ -17,7 +17,7 @@ const ProgressBar = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography variant="caption" component="div" color="textSecondary">
+        <Typography variant="caption" component="div" color="black">
           75%
         </Typography>
       </Box>

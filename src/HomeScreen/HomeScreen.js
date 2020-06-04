@@ -12,7 +12,7 @@ const HomeScreen = () => {
         <Box width="100%" height="100%">
           <Box
             width="100%"
-            height="50%"
+            height="70%"
             bgcolor="black"
             border={1}
             borderColor="white"
@@ -21,7 +21,7 @@ const HomeScreen = () => {
           </Box>
           <Box
             width="100%"
-            height="50%"
+            height="30%"
             bgcolor="black"
             border={1}
             borderColor="white"

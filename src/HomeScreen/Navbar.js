@@ -1,4 +1,5 @@
 import React from "react";
+import Header from './Header'
 import Box from "@material-ui/core/Box";
 import ProgressBar from "./ProgressBar";
 import Typography from "@material-ui/core/Typography";
@@ -22,10 +23,11 @@ const Navbar = () => {
           width={150}
           bgcolor="white"
           border={1}
-          borderColor="red"
+          borderRadius="borderRadius"
+          
         >
           <Box p={1} display="flex" justifyContent="center">
-            <Typography color="textSecondary">PROGRESS</Typography>
+            <Typography variant="button">JACK DE GRAVE</Typography>
           </Box>
           <Box display="flex" justifyContent="center">
             <Box className="Profile" position="relative" display="inline-flex">
@@ -33,6 +35,7 @@ const Navbar = () => {
             </Box>
           </Box>
         </Box>
+        <Header/>
       </Box>
     </>
   );
