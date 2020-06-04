@@ -7,20 +7,22 @@ const Sidebar = () => {
       border={1}
       borderColor="white"
       bgcolor="black"
-      style={{ width: "30%", overflow: "auto", height: "100%" }}
+      style={{ width: "20%", overflow: "auto", height: "100%" }}
+      display="flex"
+      justifyContent="center"
+      width='100%'
     >
-      <h1>1</h1>
-      <h1>2</h1>
-      <h1>3</h1>
-      <h1>4</h1>
-      <h1>5</h1>
-      <h1>6</h1>
-      <h1>7</h1>
-      <h1>8</h1>
-      <h1>9</h1>
-      <h1>10</h1>
-      <h1>11</h1>
-      <h1>12</h1>
+      <Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+        <Box mt={3} bgcolor="white" borderRadius="100%" width={150} height={150}></Box>
+      </Box>
     </Box>
   );
 };

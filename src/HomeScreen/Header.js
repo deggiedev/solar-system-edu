@@ -6,9 +6,7 @@ import {ReactComponent as NasaLogo} from '/Users/jackdegrave/Development/solar-s
 
 const Header = () => {
   return (
-    <Box p={2}>
         <NasaLogo />
-    </Box>
   );
 };
 
