@@ -1,15 +1,17 @@
 import React from "react";
-import Header from "./Header";
 import Box from "@material-ui/core/Box";
 import ProgressBar from "./ProgressBar";
 import Typography from "@material-ui/core/Typography";
-import { ReactComponent as NasaLogo } from "/Users/jackdegrave/Development/solar-system-edu/src/assets/NASA_Worm_logo.svg";
+//import { ReactComponent as NasaLogo } from "/Users/jackdegrave/Development/solar-system-edu/src/assets/nasa_worm_logo.svg";
+import SpaceXLogo from "/Users/jackdegrave/Development/solar-system-edu/src/assets/spacex_logo_white.png";
 
 const Navbar = () => {
   return (
     <Box display="flex" width="100%">
       <Box width='100%' display="flex" alignItems='center' justifyContent="flex-start" bgcolor="black">
-        <NasaLogo />
+        <Box p={1} width={300}>
+            <img alt='space_x_logo' width="100%" src={SpaceXLogo}></img>
+        </Box>
       </Box>
       <Box
         width='100%'
@@ -31,7 +33,7 @@ const Navbar = () => {
             <Typography variant="button">JACK DE GRAVE</Typography>
           </Box>
           <Box display="flex" justifyContent="center">
-            <Box className="Profile" position="relative" display="inline-flex">
+            <Box justifyContent="center" className="Profile" position="relative" display="inline-flex">
               <ProgressBar />
             </Box>
           </Box>
