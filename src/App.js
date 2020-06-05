@@ -11,7 +11,7 @@ function App() {
       .then((resp) => setPlanets(resp));
   }, []);
 
-  return <HomeScreen planets={planets} />;
+  return <HomeScreen bgcolor='black' height='100%' planets={planets} />;
 }
 
 export default App;
