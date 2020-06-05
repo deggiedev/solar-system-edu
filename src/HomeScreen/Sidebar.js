@@ -4,9 +4,6 @@ import Box from "@material-ui/core/Box";
 const Sidebar = () => {
   return (
     <Box
-      border={1}
-      borderColor="white"
-      bgcolor="black"
       style={{ width: "20%", overflow: "auto", height: "100%" }}
       display="flex"
       justifyContent="center"

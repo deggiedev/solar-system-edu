@@ -8,7 +8,7 @@ import SpaceXLogo from "/Users/jackdegrave/Development/solar-system-edu/src/asse
 const Navbar = () => {
   return (
     <Box display="flex" width="100%">
-      <Box width='100%' display="flex" alignItems='center' justifyContent="flex-start" bgcolor="black">
+      <Box width='100%' display="flex" alignItems='center' justifyContent="flex-start" bgcolor="red">
         <Box p={1} width={300}>
             <img alt='space_x_logo' width="100%" src={SpaceXLogo}></img>
         </Box>
@@ -16,7 +16,7 @@ const Navbar = () => {
       <Box
         width='100%'
         className="Navbar"
-        bgcolor="black"
+        bgcolor="yellow"
         display="flex"
         justifyContent="flex-end"
         p={1}
