@@ -1,16 +1,12 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
+import MarsImg from "../assets/mars.jpg"
 
 const Planet = () => {
   return (
-    <Box
-      mx={1}
-      my={1}
-      bgcolor="white"
-      borderRadius="100%"
-      width={150}
-      height={150}
-    ></Box>
+    <Box px={2} py={2}>
+      <img alt="planet_image" width={"100%"} src={MarsImg}></img>
+    </Box>
   );
 };
 

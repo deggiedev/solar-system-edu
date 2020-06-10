@@ -4,11 +4,13 @@ import ProgressBar from "./ProgressBar";
 import Typography from "@material-ui/core/Typography";
 //import { ReactComponent as NasaLogo } from "/Users/jackdegrave/Development/solar-system-edu/src/assets/nasa_worm_logo.svg";
 import SpaceXLogo from "/Users/jackdegrave/Development/solar-system-edu/src/assets/spacex_logo_white.png";
+import './HomeScreen.css'
+
 
 const Navbar = () => {
   return (
-    <Box display="flex" width="100%">
-      <Box width='100%' display="flex" alignItems='center' justifyContent="flex-start" bgcolor="red">
+    <Box display="flex" width="100%" className="Navbar">
+      <Box width='100%' display="flex" alignItems='center' justifyContent="flex-start" /*bgcolor="red"*/>
         <Box p={1} >
             <img alt='space_x_logo' width="65%" src={SpaceXLogo}></img>
         </Box>
@@ -20,15 +22,15 @@ const Navbar = () => {
         display="flex"
         justifyContent="flex-end"
         p={1}
-      >
+      >git 
         <Box
-          className="ProfileContainer"
-          bgcolor="white"
+          className="ProfileContainer" borderRadius='3%'
+          color={"white"}
         >
-          <Box p={1} display="flex" justifyContent="center">
-            <Typography variant="button">JACK DE GRAVE</Typography>
+          <Box px={2} pt={2} display="flex" justifyContent="center">
+            <Typography variant="button">PROGRESS</Typography>
           </Box>
-          <Box px={1} pb={1} display="flex" justifyContent="center">
+          <Box px={2} pb={2} display="flex" justifyContent="center">
             <Box justifyContent="center" className="Profile" position="relative" display="inline-flex">
               <ProgressBar />
             </Box>
