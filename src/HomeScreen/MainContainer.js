@@ -10,11 +10,6 @@ const MainContainer = () => {
       <Box className="PlanetContainer"  /*bgcolor="yellow"*/>
         <PlanetPage/>
       </Box>
-      <Box p={1} className="QuestionContainer" /*bgcolor='green'*/>
-        <Question/>
-        <Question/>
-        <Question/>
-      </Box>
     </Box>
   );
 };
