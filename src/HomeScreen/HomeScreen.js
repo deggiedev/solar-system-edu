@@ -14,7 +14,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import MarsImg from "../assets/Mars/mars.jpg";
+import MarsPng from "../assets/PlanetImages/mars.svg.png";
 
 const drawerWidth = 240;
 
@@ -138,20 +138,22 @@ function HomeScreen(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar}/>
         <Box display="flex">
-          <Box p={1}>
-            <img alt="" src={MarsImg} width={600}></img>
-          </Box>
+        <Hidden xsDown implementation="css">
+        <Box width={500}>
+        <img alt="" src={MarsPng} width={'100%'}></img>
+        </Box>
+        </Hidden>
+      
           <Box
-            p={1}
-            display="flex"
+            display="block"
             flexDirection="column"
+            justifyContent='space-evenly'
             alignItems="center"
+            pl={3}
           >
-            <Typography variant="h3" gutterBottom>
-              Planet Name
-            </Typography>
+            <Typography variant="h3">Jupiter</Typography>
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -161,23 +163,19 @@ function HomeScreen(props) {
               interdum velit laoreet id donec ultrices. Odio morbi quis commodo
               odio aenean sed adipiscing.
             </Typography>
-            <Box width={'100%'}  as='button' bgcolor="pink">
-            <Typography variant="h6" gutterBottom>
-              Question content...... 1?
-            </Typography>
-            </Box>
-            <Box width={'100%'} as='button' bgcolor="pink">
-            <Typography variant="h6" gutterBottom>
-              Question content...... 2?
-            </Typography>
-            </Box>
-            <Box width={'100%'}  as='button' bgcolor="pink">
-            <Typography variant="h6" gutterBottom>
-              Question content...... 3?
-            </Typography>
-            </Box>
           </Box>
         </Box>
+        <Box width={"100%"}>
+        <Box display="flex" justifyContent="center" mt={1} p={1} as="button" bgcolor="pink">
+          <Typography variant="h6" >What are Saturns rings made out of?</Typography>
+        </Box>
+        <Box display="flex" justifyContent="center" mt={1} p={1} as="button" bgcolor="pink">
+          <Typography variant="h6" >What are Saturns rings made out of?</Typography>
+        </Box>
+        <Box display="flex" justifyContent="center" mt={1} p={1} as="button" bgcolor="pink">
+          <Typography variant="h6" >What are Saturns rings made out of?</Typography>
+        </Box>
+      </Box>
       </main>
     </div>
   );
