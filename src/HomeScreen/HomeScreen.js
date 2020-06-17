@@ -9,12 +9,20 @@ import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import MarsPng from "../assets/PlanetImages/mars.svg.png";
+import Mercury from "../assets/PlanetImages/mercury.svg.png";
+import Venus from "../assets/PlanetImages/venus.svg.png";
+import Earth from "../assets/PlanetImages/earth.svg.png";
+import Mars from "../assets/PlanetImages/mars.svg.png";
+import Jupiter from "../assets/PlanetImages/jupiter.svg.png";
+import Saturn from "../assets/PlanetImages/saturn.svg.png";
+import Uranus from "../assets/PlanetImages/uranus.svg.png";
+import Neptune from "../assets/PlanetImages/neptune.svg.png";
 
 const drawerWidth = 240;
 
@@ -42,8 +50,17 @@ const useStyles = makeStyles((theme) => ({
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
+  toolbar2: {
+    minHeight: '64px',
+    backgroundColor: '#3f51b5',
+  },
+  toolbar3: {
+    minHeight: '50px',
+    backgroundColor: '#3f51b5',
+  },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: 'white'
   },
   content: {
     flexGrow: 1,
@@ -63,22 +80,25 @@ function HomeScreen(props) {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar2} />
       <Divider />
       <List>
         {[
-          "Mercury",
-          "Venus",
-          "Earth",
-          "Mars",
-          "Jupiter",
-          "Saturn",
-          "Uranus",
-          "Neptune",
+          Mercury,
+          Venus,
+          Earth,
+          Mars,
+          Jupiter,
+          Saturn,
+          Uranus,
+          Neptune,
         ].map((text, index) => (
+          <Box py={1}>
           <ListItem button key={text}>
-            <ListItemText inset primary={text} />
+          <ListItemIcon><img width={30} alt="" src={text} ></img></ListItemIcon>
+          <ListItemText primary={"Planet"} />
           </ListItem>
+          </Box>
         ))}
       </List>
     </div>
@@ -138,44 +158,54 @@ function HomeScreen(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <div className={classes.toolbar}/>
-        <Box display="flex">
-        <Hidden xsDown implementation="css">
-        <Box width={500}>
-        <img alt="" src={MarsPng} width={'100%'}></img>
+        <div className={classes.toolbar} />
+        <Box alignItems="flex-start" display="flex">
+          {/*<Hidden xsDown implementation="css">
+            <Box p={2}>
+              <img alt="" src={MarsPng} width={360}></img>
+            </Box>
+          </Hidden>*/}
+
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" p={2}>
+            <Box py={2}>
+              <Typography align="center"  variant="h2">
+                Jupiter
+              </Typography>
+            </Box>
+              <Typography  paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Rhoncus dolor purus non enim praesent elementum facilisis leo
+                vel. Risus at ultrices mi tempus imperdiet. Semper risus in
+                hendrerit gravida rutrum quisque non tellus. Convallis convallis
+                tellus id interdum velit laoreet id donec ultrices. Odio morbi
+                quis commodo odio aenean sed adipiscing.
+              </Typography>
+          </Box>
         </Box>
-        </Hidden>
-      
-          <Box
-            display="block"
-            flexDirection="column"
-            justifyContent='space-evenly'
-            alignItems="center"
-            pl={3}
-          >
-            <Typography variant="h3">Jupiter</Typography>
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent elementum facilisis leo vel.
-              Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis convallis tellus id
-              interdum velit laoreet id donec ultrices. Odio morbi quis commodo
-              odio aenean sed adipiscing.
+        <Box
+          width={"100%"}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          p={2}
+        >
+          <Box width={"100%"} py={2} as="button" bgcolor="pink">
+            <Typography align="center" variant="h5">
+              What are Saturns rings made out of?
+            </Typography>
+          </Box>
+          <Box width={"100%"} mt={1} py={2} as="button" bgcolor="pink">
+            <Typography align="center" variant="h5">
+              What are Saturns rings made out of?
+            </Typography>
+          </Box>
+          <Box width={"100%"} mt={1} py={2} as="button" bgcolor="pink">
+            <Typography align="center" variant="h5">
+              What are Saturns rings made out of?
             </Typography>
           </Box>
         </Box>
-        <Box width={"100%"}>
-        <Box display="flex" justifyContent="center" mt={1} p={1} as="button" bgcolor="pink">
-          <Typography variant="h6" >What are Saturns rings made out of?</Typography>
-        </Box>
-        <Box display="flex" justifyContent="center" mt={1} p={1} as="button" bgcolor="pink">
-          <Typography variant="h6" >What are Saturns rings made out of?</Typography>
-        </Box>
-        <Box display="flex" justifyContent="center" mt={1} p={1} as="button" bgcolor="pink">
-          <Typography variant="h6" >What are Saturns rings made out of?</Typography>
-        </Box>
-      </Box>
       </main>
     </div>
   );
