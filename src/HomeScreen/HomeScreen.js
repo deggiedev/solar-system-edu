@@ -15,6 +15,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
+import spaceXLogo from '../assets/SpaceXLogo/spacex_logo.png'
+import ProgressBar from '../HomeScreen/ProgressBar/ProgressBar'
 import Mercury from "../assets/PlanetImages/mercury.svg.png";
 import Venus from "../assets/PlanetImages/venus.svg.png";
 import Earth from "../assets/PlanetImages/earth.svg.png";
@@ -40,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      backgroundColor: 'black'
     },
   },
   menuButton: {
@@ -50,14 +53,6 @@ const useStyles = makeStyles((theme) => ({
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
-  toolbar2: {
-    minHeight: '64px',
-    backgroundColor: '#3f51b5',
-  },
-  toolbar3: {
-    minHeight: '50px',
-    backgroundColor: '#3f51b5',
-  },
   drawerPaper: {
     width: drawerWidth,
     backgroundColor: 'white'
@@ -80,7 +75,7 @@ function HomeScreen(props) {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar2} />
+      <Box display='flex' alignItems="center" justifyContent="center" className={classes.toolbar}><img alt="" width={200} src={spaceXLogo}></img></Box>
       <Divider />
       <List>
         {[
@@ -121,9 +116,12 @@ function HomeScreen(props) {
           >
             <MenuIcon />
           </IconButton>
+          <Box display="flex" alignItems="center" justifyContent="flex-end" width='100%'>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Progress
           </Typography>
+          <ProgressBar/>
+          </Box>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
@@ -158,7 +156,7 @@ function HomeScreen(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar}></div>
         <Box alignItems="flex-start" display="flex">
           {/*<Hidden xsDown implementation="css">
             <Box p={2}>
