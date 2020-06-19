@@ -15,8 +15,16 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
+import MoreAboutMars from './MoreAboutMars/MoreAboutMars'
 import spaceXLogo from "../assets/SpaceXLogo/spacex_logo.png";
-import observatory from "../assets/observatory.png";
+import MercuryPng from "../assets/PlanetImages/mars.svg.png"
+import VenusPng from "../assets/PlanetImages/mars.svg.png"
+import EarthPng from "../assets/PlanetImages/mars.svg.png"
+import MarsPng from "../assets/PlanetImages/mars.svg.png"
+import JupiterPng from "../assets/PlanetImages/mars.svg.png"
+import SaturnPng from "../assets/PlanetImages/mars.svg.png"
+import UranusPng from "../assets/PlanetImages/mars.svg.png"
+import NeptunePng from "../assets/PlanetImages/mars.svg.png"
 import ProgressBar from "../HomeScreen/ProgressBar/ProgressBar";
 import Mercury from "../assets/PlanetImages/mercury.png";
 import Venus from "../assets/PlanetImages/venus.png";
@@ -57,14 +65,14 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "white",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    marginTop: '50px',
+    height: '100vh',
   },
 }));
-
 function HomeScreen(props) {
   const { window } = props;
   const classes = useStyles();
@@ -98,7 +106,7 @@ function HomeScreen(props) {
           { Neptune: Neptune },
         ].map((planetObj, index) => (
           <Box py={1}>
-            <ListItem button key={index}>
+            <ListItem alignItems="center" button key={index}>
               <ListItemIcon>
                 <img width={30} alt="" src={Object.values(planetObj)}></img>
               </ListItemIcon>
@@ -174,11 +182,11 @@ function HomeScreen(props) {
       <main className={classes.content}>
         <div className={classes.toolbar}></div>
         <Box alignItems="flex-start" display="flex">
-          {/*<Hidden xsDown implementation="css">
+          <Hidden xsDown implementation="css">
             <Box p={2}>
-              <img alt="" src={MarsPng} width={360}></img>
+              <img alt="" src={MarsPng} width={400}></img>
             </Box>
-          </Hidden>*/}
+          </Hidden>
 
           <Box
             display="flex"
@@ -188,7 +196,7 @@ function HomeScreen(props) {
           >
             <Box py={2}>
               <Typography align="center" variant="h2">
-                Jupiter
+                Mars
               </Typography>
             </Box>
             <Typography paragraph>
@@ -200,29 +208,7 @@ function HomeScreen(props) {
               interdum velit laoreet id donec ultrices. Odio morbi quis commodo
               odio aenean sed adipiscing.
             </Typography>
-          </Box>
-        </Box>
-        <Box
-          width={"100%"}
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          p={2}
-        >
-          <Box width={"100%"} py={2} as="button">
-            <Typography align="center" variant="h5">
-              What are Saturns rings made out of?
-            </Typography>
-          </Box>
-          <Box width={"100%"} mt={1} py={2} as="button">
-            <Typography align="center" variant="h5">
-              What are Saturns rings made out of?
-            </Typography>
-          </Box>
-          <Box width={"100%"} mt={1} py={2} as="button">
-            <Typography align="center" variant="h5">
-              What are Saturns rings made out of?
-            </Typography>
+            <MoreAboutMars/>
           </Box>
         </Box>
       </main>
