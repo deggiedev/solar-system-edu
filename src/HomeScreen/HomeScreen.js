@@ -105,7 +105,7 @@ function HomeScreen(props) {
           { Uranus: Uranus },
           { Neptune: Neptune },
         ].map((planetObj, index) => (
-          <Box py={1}>
+          <Box display="flex" py={1}>
             <ListItem alignItems="center" button key={index}>
               <ListItemIcon>
                 <img width={30} alt="" src={Object.values(planetObj)}></img>

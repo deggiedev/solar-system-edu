@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   question: {
     fontSize: theme.typography.pxToRem(16),
     fontWeight: theme.typography.fontWeightRegular,
-  }
+  },
 }));
 
 export default function MoreAboutMars() {
@@ -37,26 +37,26 @@ export default function MoreAboutMars() {
             Learn more about Mars
           </Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails alignItems="center">
+        <ExpansionPanelDetails  alignItems="center">
         <Box 
         width="100%"
         display="flex"
         flexDirection="column"
         alignItems="center"
         p={2}>
-          <Box width="80%" display='flex' justifyContent="space-between" alignItems="center" py={2} as="button">
+          <Box width="75%" display='flex' justifyContent="space-between" alignItems="center" py={2} as="button">
+            <Typography  className={classes.question}>
+            Why is Venus considered our planets evil twin?
+            </Typography>
+            <Box><Button variant="contained" color="secondary">Find Out</Button></Box>
+          </Box>
+          <Box width="75%" display='flex' justifyContent="space-between" alignItems="center"  mt={1} py={2} as="button">
             <Typography  className={classes.question}>
               What are Saturns rings made out of?
             </Typography>
             <Box><Button variant="contained" color="secondary">Find Out</Button></Box>
           </Box>
-          <Box width="80%" display='flex' justifyContent="space-between" alignItems="center"  mt={1} py={2} as="button">
-            <Typography  className={classes.question}>
-              What are Saturns rings made out of?
-            </Typography>
-            <Box><Button variant="contained" color="secondary">Find Out</Button></Box>
-          </Box>
-          <Box width="80%" display='flex' justifyContent="space-between" alignItems="center" mt={1} py={2}>
+          <Box width="75%" display='flex' justifyContent="space-between" alignItems="center" mt={1} py={2}>
             <Typography className={classes.question}>
               What are Saturns rings made out of?
             </Typography>
