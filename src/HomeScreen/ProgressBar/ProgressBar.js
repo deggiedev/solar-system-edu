@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 function ProgressBar(props) {
     return (
       <Box px={2} position="relative" display="inline-flex">
-        <CircularProgress color="white" variant="static" {...props} />
+        <CircularProgress color={'secondary'} variant="static" {...props} />
         <Box
         px={2}
           top={0}
@@ -18,7 +18,7 @@ function ProgressBar(props) {
           alignItems="center"
           justifyContent="center"
         >
-          <Typography variant="caption" component="div" color="white">{`${Math.round(
+          <Typography variant="caption" component="div">{`${Math.round(
             props.value,
           )}%`}</Typography>
         </Box>
