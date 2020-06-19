@@ -9,22 +9,23 @@ import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import spaceXLogo from '../assets/SpaceXLogo/spacex_logo.png'
-import ProgressBar from '../HomeScreen/ProgressBar/ProgressBar'
-import Mercury from "../assets/PlanetImages/mercury.svg.png";
-import Venus from "../assets/PlanetImages/venus.svg.png";
-import Earth from "../assets/PlanetImages/earth.svg.png";
-import Mars from "../assets/PlanetImages/mars.svg.png";
-import Jupiter from "../assets/PlanetImages/jupiter.svg.png";
-import Saturn from "../assets/PlanetImages/saturn.svg.png";
-import Uranus from "../assets/PlanetImages/uranus.svg.png";
-import Neptune from "../assets/PlanetImages/neptune.svg.png";
+import spaceXLogo from "../assets/SpaceXLogo/spacex_logo.png";
+import observatory from "../assets/observatory.png";
+import ProgressBar from "../HomeScreen/ProgressBar/ProgressBar";
+import Mercury from "../assets/PlanetImages/mercury.png";
+import Venus from "../assets/PlanetImages/venus.png";
+import Earth from "../assets/PlanetImages/earth.png";
+import Mars from "../assets/PlanetImages/mars.png";
+import Jupiter from "../assets/PlanetImages/jupiter.png";
+import Saturn from "../assets/PlanetImages/saturn.png";
+import Uranus from "../assets/PlanetImages/uranus.png";
+import Neptune from "../assets/PlanetImages/neptune.png";
 
 const drawerWidth = 240;
 
@@ -42,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
-      backgroundColor: 'black'
+      backgroundColor: "white",
+      color: "black",
     },
   },
   menuButton: {
@@ -55,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
   content: {
     flexGrow: 1,
@@ -75,24 +77,33 @@ function HomeScreen(props) {
 
   const drawer = (
     <div>
-      <Box display='flex' alignItems="center" justifyContent="center" className={classes.toolbar}><img alt="" width={200} src={spaceXLogo}></img></Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        className={classes.toolbar}
+      >
+        <img alt="" width={200} src={spaceXLogo}></img>
+      </Box>
       <Divider />
       <List>
         {[
-          Mercury,
-          Venus,
-          Earth,
-          Mars,
-          Jupiter,
-          Saturn,
-          Uranus,
-          Neptune,
-        ].map((text, index) => (
+          { Mercury: Mercury },
+          { Venus: Venus },
+          { Earth: Earth },
+          { Mars: Mars },
+          { Jupiter: Jupiter },
+          { Saturn: Saturn },
+          { Uranus: Uranus },
+          { Neptune: Neptune },
+        ].map((planetObj, index) => (
           <Box py={1}>
-          <ListItem button key={text}>
-          <ListItemIcon><img width={30} alt="" src={text} ></img></ListItemIcon>
-          <ListItemText primary={"Planet"} />
-          </ListItem>
+            <ListItem button key={index}>
+              <ListItemIcon>
+                <img width={30} alt="" src={Object.values(planetObj)}></img>
+              </ListItemIcon>
+              <ListItemText primary={Object.keys(planetObj)} />
+            </ListItem>
           </Box>
         ))}
       </List>
@@ -116,11 +127,16 @@ function HomeScreen(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Box display="flex" alignItems="center" justifyContent="flex-end" width='100%'>
-          <Typography variant="h6" noWrap>
-            Progress
-          </Typography>
-          <ProgressBar/>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="flex-end"
+            width="100%"
+          >
+            <Typography variant="h6" noWrap>
+              Progress
+            </Typography>
+            <ProgressBar />
           </Box>
         </Toolbar>
       </AppBar>
@@ -164,21 +180,26 @@ function HomeScreen(props) {
             </Box>
           </Hidden>*/}
 
-          <Box display="flex" flexDirection="column" justifyContent="flex-start" p={2}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="flex-start"
+            p={2}
+          >
             <Box py={2}>
-              <Typography align="center"  variant="h2">
+              <Typography align="center" variant="h2">
                 Jupiter
               </Typography>
             </Box>
-              <Typography  paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Rhoncus dolor purus non enim praesent elementum facilisis leo
-                vel. Risus at ultrices mi tempus imperdiet. Semper risus in
-                hendrerit gravida rutrum quisque non tellus. Convallis convallis
-                tellus id interdum velit laoreet id donec ultrices. Odio morbi
-                quis commodo odio aenean sed adipiscing.
-              </Typography>
+            <Typography paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Rhoncus dolor purus non enim praesent elementum facilisis leo vel.
+              Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
+              gravida rutrum quisque non tellus. Convallis convallis tellus id
+              interdum velit laoreet id donec ultrices. Odio morbi quis commodo
+              odio aenean sed adipiscing.
+            </Typography>
           </Box>
         </Box>
         <Box
@@ -188,17 +209,17 @@ function HomeScreen(props) {
           alignItems="center"
           p={2}
         >
-          <Box width={"100%"} py={2} as="button" bgcolor="pink">
+          <Box width={"100%"} py={2} as="button">
             <Typography align="center" variant="h5">
               What are Saturns rings made out of?
             </Typography>
           </Box>
-          <Box width={"100%"} mt={1} py={2} as="button" bgcolor="pink">
+          <Box width={"100%"} mt={1} py={2} as="button">
             <Typography align="center" variant="h5">
               What are Saturns rings made out of?
             </Typography>
           </Box>
-          <Box width={"100%"} mt={1} py={2} as="button" bgcolor="pink">
+          <Box width={"100%"} mt={1} py={2} as="button">
             <Typography align="center" variant="h5">
               What are Saturns rings made out of?
             </Typography>
