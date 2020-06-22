@@ -17,6 +17,8 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import MoreAboutMars from './MoreAboutMars/MoreAboutMars'
 import spaceXLogo from "../assets/SpaceXLogo/spacex_logo.png";
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Particles from 'react-particles-js';
 import MercuryPng from "../assets/PlanetImages/mars.svg.png"
 import VenusPng from "../assets/PlanetImages/mars.svg.png"
 import EarthPng from "../assets/PlanetImages/mars.svg.png"
@@ -69,8 +71,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    marginTop: '50px',
-    height: '100vh',
+    marginTop: '64px',
   },
 }));
 function HomeScreen(props) {
@@ -92,6 +93,7 @@ function HomeScreen(props) {
         className={classes.toolbar}
       >
         <img alt="" width={200} src={spaceXLogo}></img>
+        {/*<NasaLogo/>*/}
       </Box>
       <Divider />
       <List>
@@ -108,7 +110,8 @@ function HomeScreen(props) {
           <Box display="flex" py={1}>
             <ListItem alignItems="center" button key={index}>
               <ListItemIcon>
-                <img width={30} alt="" src={Object.values(planetObj)}></img>
+                <ArrowForwardIosIcon color={'secondary'}/>
+                {/*<img width={30} alt="" src={Object.values(planetObj)}></img>*/}
               </ListItemIcon>
               <ListItemText primary={Object.keys(planetObj)} />
             </ListItem>

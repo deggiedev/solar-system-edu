@@ -37,31 +37,66 @@ export default function MoreAboutMars() {
             Learn more about Mars
           </Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails  alignItems="center">
-        <Box 
-        width="100%"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        p={2}>
-          <Box width="75%" display='flex' justifyContent="space-between" alignItems="center" py={2} as="button">
-            <Typography  className={classes.question}>
-            Why is Venus considered our planets evil twin?
-            </Typography>
-            <Box><Button variant="contained" color="secondary">Find Out</Button></Box>
-          </Box>
-          <Box width="75%" display='flex' justifyContent="space-between" alignItems="center"  mt={1} py={2} as="button">
-            <Typography  className={classes.question}>
-              What are Saturns rings made out of?
-            </Typography>
-            <Box><Button variant="contained" color="secondary">Find Out</Button></Box>
-          </Box>
-          <Box width="75%" display='flex' justifyContent="space-between" alignItems="center" mt={1} py={2}>
-            <Typography className={classes.question}>
-              What are Saturns rings made out of?
-            </Typography>
-            <Box><Button variant="contained" color="secondary">Find Out</Button></Box>
-          </Box>
+        <ExpansionPanelDetails alignItems="center">
+          <Box
+            width="100%"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            p={2}
+          >
+            <Box
+              width="75%"
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              py={1}
+              as="button"
+            >
+              <Typography className={classes.question}>
+                Was Mars like our planet once upon a time?
+              </Typography>
+              <Box>
+                <Button variant="contained" color="secondary">
+                  Find Out
+                </Button>
+              </Box>
+            </Box>
+            <Box
+              width="75%"
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              mt={1}
+              py={1}
+              as="button"
+            >
+              <Typography className={classes.question}>
+                Why was Mars dubbed the red planet?
+              </Typography>
+              <Box>
+                <Button variant="contained" color="secondary">
+                  Find Out
+                </Button>
+              </Box>
+            </Box>
+            <Box
+              width="75%"
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              mt={1}
+              py={1}
+            >
+              <Typography className={classes.question}>
+                Which NASA missions have taken us to Mars?
+              </Typography>
+              <Box>
+                <Button variant="contained" color="secondary">
+                  Find Out
+                </Button>
+              </Box>
+            </Box>
           </Box>
         </ExpansionPanelDetails>
       </ExpansionPanel>
